@@ -1,0 +1,185 @@
+.slide-head {
+    background-color: #00c853;
+}
+header {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.container-nav {
+    width: 96%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.page-catalog .logo,
+.page-catalog .logo span {
+    color: #fff !important;
+}
+.truncate-text {
+    position: relative;
+    max-height: 6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-height: 1.5em;
+    height: calc(1.5em * 4);
+}
+
+.truncate-text::after {
+    content: '...';
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding-left: 5px;
+}
+header .main-nav {
+    width: 60%;
+    margin: 0 20%;
+    position: absolute;
+    text-align: center;
+    height: 20px;
+    padding: 20px 0;
+}
+
+header .logo {
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 24px;
+    line-height: 60px;
+}
+
+header .main-nav li {
+    padding-left: 30px;
+}
+
+header .sub-nav {
+    float: right;
+    height: 20px;
+    padding: 28px 0;
+}
+
+header .main-nav a {
+    line-height: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+}
+
+header .main-nav li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+header .logo span {
+    color: #ffffff;
+    font-family: Rubik, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 400;
+    line-height: 1;
+}
+
+header .logo,
+header .slogan {
+    font-family: Rubik, sans-serif;
+    color: #ffffff;
+    float: left;
+    text-transform: uppercase;
+}
+
+.a-search input {
+    height: 34px;
+    padding: 6px 12px;
+    font-family: Open Sans, sans-serif;
+    color: #555;
+    background-color: #fff;
+    width: 100%;
+    font-size: 14px;
+    min-width: 260px;
+    border-radius: 4px;
+    outline: 0;
+    border: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    border: 1px solid rgba(0, 0, 0, .15);
+    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
+.a-search .fa-search {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+}
+.a-search .fa-search {
+    top: 9px;
+    font-size: 16px;
+}
+.a-search {
+    z-index: 1;
+    position: relative;
+}
+header .sub-nav i {
+    color: #ccc;
+    font-size: 18px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.page-catalog .page-cover .title .page-type {
+    opacity: .5;
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+.page-catalog .page-cover .title {
+    float: left;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: Rubik, sans-serif;
+    font-weight: 700;
+}
+
+.page-catalog .page-cover .icover {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #00c853;
+}
+.main-content {
+padding: 30px 90px 0 90px;
+}
+.h4-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fffffff0;
+}
+.h1-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #fff;
+}
+.quantity-h3 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #ffffff7d;
+}
+.box-text {
+    padding: 20px;
+    background-color: #6767677c;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 10px;
+}
