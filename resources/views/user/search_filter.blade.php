@@ -468,7 +468,7 @@
                                             <input class="checkBox" type="checkbox" name="status_array[]"
                                                 value="{{$item->id}}">
                                         </span>
-                                        <span class="item-text">{{$item->status_name}}</span>
+                                        <span class="item-text">{{$item->status_name}} {{ $item->status_full_name ? '(' . $item->status_full_name . ')' : '' }}</span>
                                     </li>
                                 @endforeach
                             </ul>

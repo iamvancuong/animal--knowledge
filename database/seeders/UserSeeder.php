@@ -27,8 +27,8 @@ class UserSeeder extends Seeder
                 'created_at' => Carbon::now()
             ],
             [
-                'name' => 'Nguyễn Đăng Nhân',
-                'email' => 'tuongvandang1@gmail.com',
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
                 'address' => '175 Tây Sơn Đống Đa',
                 'gender' => 0,
                 'password' => Hash::make('123456'),
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Trương Văn Cường',
-                'email' => 'cuong2003@gmail.com',
+                'email' => 'cuong@gmail.com',
                 'address' => '16 Mạc Thái Tổ',
                 'gender' => 1,
                 'password' => Hash::make('123456'),

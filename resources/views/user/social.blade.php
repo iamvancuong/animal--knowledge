@@ -285,6 +285,21 @@
                         </span>
                         <h3>Trò chơi</h3>
                     </a>
+                    <a class="menu-item" id="home_animal" href="{{ route('user.home') }}"
+                        style="color: #241E38">
+                        <span><i class="fa-solid fa-globe"></i>
+                        </span>
+                        <h3>Trang chủ động vật</h3>
+                    </a>
+
+                    @if(Auth::check() && (Auth::user()->role_id == \App\Models\User::ADMIN || Auth::user()->role_id == \App\Models\User::SYSTEM))
+                    <a class="menu-item" id="admin_dashboard" href="{{ route('admin.dashboard') }}"
+                        style="color: #241E38">
+                        <span><i class="fa-solid fa-user-tie"></i>
+                        </span>
+                        <h3>Admin Dashboard</h3>
+                    </a>
+                    @endif
 
                 </div>
                 <!-- ======================= END OF SIDEBAR ======================= -->

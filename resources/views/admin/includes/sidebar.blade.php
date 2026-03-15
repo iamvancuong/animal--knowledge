@@ -68,6 +68,17 @@
                     </ul>
                 </li>
 
+                <li class="list-divider"></li>
+                <li class="nav-small-cap"><span class="hide-menu">Điều Hướng</span></li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('user.list_post_social') }}"
+                        aria-expanded="false"><i data-feather="message-circle" class="feather-icon"></i><span
+                            class="hide-menu">Mạng Xã Hội</span></a>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('user.home') }}"
+                        aria-expanded="false"><i data-feather="globe" class="feather-icon"></i><span
+                            class="hide-menu">Trang Chủ Web Động Vật</span></a>
+                </li>
+
                 <!-- <li class="sidebar-item">
                             <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                                 <i data-feather="gamepad" class="feather-icon"></i>

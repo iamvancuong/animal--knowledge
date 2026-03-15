@@ -52,7 +52,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $user = auth()->user();
-            if ($user->role_id == User::ADMIN) {
+            if ($user->role_id == User::ADMIN || $user->role_id == User::SYSTEM) {
                 $message = MessageContent::getMessage('login_success');
                 return redirect()->route('admin.dashboard')->with('success', $message);
             } else {

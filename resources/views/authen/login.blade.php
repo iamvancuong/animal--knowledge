@@ -88,8 +88,8 @@
                                                     <div class="alert alert-info mt-3" style="font-size: 0.9rem;">
                                                         <strong>Tài khoản test:</strong><br>
                                                         - Hệ thống: system@gmail.com / 123456<br>
-                                                        - Admin: tuongvandang1@gmail.com / 123456<br>
-                                                        - User: cuong2003@gmail.com / 123456<br>
+                                                        - Admin: admin@gmail.com / 123456<br>
+                                                        - User: cuong@gmail.com / 123456<br>
                                                     </div>
                                                 </div>
                                             </div>
