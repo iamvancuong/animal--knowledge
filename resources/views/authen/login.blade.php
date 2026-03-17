@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>Đăng nhập</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
@@ -128,6 +130,8 @@
                                                     <a href="{{ route('view_register') }}"
                                                         class="link-secondary text-decoration-none">Tạo tài khoản
                                                         mới</a>
+                                                    <a href="{{ route('user.home') }}"
+                                                        class="link-secondary text-decoration-none">← Về trang chủ</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -158,6 +162,12 @@
             var notification = document.querySelector('.notification');
             notification.classList.remove('show');
         }
+
+        window.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                window.location.reload();
+            }
+        });
 
         // Hiển thị thông báo khi trang được load
         window.onload = function() {

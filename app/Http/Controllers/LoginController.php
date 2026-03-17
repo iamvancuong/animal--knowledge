@@ -13,7 +13,18 @@ class LoginController extends Controller
 {
     public function viewLogin()
     {
-        return view('authen.login');
+        // Nếu đã đăng nhập → không cho vào trang login nữa
+        if (Auth::check()) {
+            $user = Auth::user();
+            if ($user->role_id == User::ADMIN || $user->role_id == User::SYSTEM) {
+                return redirect()->route('admin.dashboard');
+            }
+            return redirect()->route('user.home');
+        }
+        return response()->view('authen.login')
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', '0');
     }
 
     public function viewRegister()
@@ -68,6 +79,10 @@ class LoginController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect()->route('view_login');
+        return redirect()->route('view_login')
+            ->withHeaders([
+                'Cache-Control' => 'no-store, no-cache, must-revalidate',
+                'Pragma'        => 'no-cache',
+            ]);
     }
 }

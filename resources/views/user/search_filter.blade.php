@@ -333,8 +333,7 @@
             </div>
 
             <!-- Tab content -->
-            <form action="{{route('user.search_filter')}}" method="post">
-                @csrf
+            <form action="{{route('user.search_filter')}}" method="GET">
                 <div class="tab-content">
                     <div class="tab-pane active">
                         <div class="container_select_mui">
@@ -349,7 +348,7 @@
                                 @foreach ($areas as $area)
                                     <li class="item">
                                         <span class="ml-2 mr-2">
-                                            <input class="checkBox" type="checkbox" name="area_array[]" value="{{$area->id}}">
+                                            <input class="checkBox" type="checkbox" name="area_array[]" value="{{$area->id}}" {{ in_array($area->id, (array)request('area_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$area->area_name}}</span>
                                     </li>
@@ -369,7 +368,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="nation_array[]"
-                                                value="{{$nation->id}}">
+                                                value="{{$nation->id}}" {{ in_array($nation->id, (array)request('nation_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$nation->nation_name}}</span>
                                     </li>
@@ -389,7 +388,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="climate_array[]"
-                                                value="{{$climate->id}}">
+                                                value="{{$climate->id}}" {{ in_array($climate->id, (array)request('climate_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$climate->climate_name}}</span>
                                     </li>
@@ -409,7 +408,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="biome_array[]"
-                                                value="{{$biome->id}}">
+                                                value="{{$biome->id}}" {{ in_array($biome->id, (array)request('biome_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$biome->biome_name}}</span>
                                     </li>
@@ -428,7 +427,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="color_array[]"
-                                                value="{{$color->id}}">
+                                                value="{{$color->id}}" {{ in_array($color->id, (array)request('color_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$color->color_name}}</span>
                                     </li>
@@ -447,7 +446,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="ocean_array[]"
-                                                value="{{$ocean->id}}">
+                                                value="{{$ocean->id}}" {{ in_array($ocean->id, (array)request('ocean_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$ocean->ocean_name}}</span>
                                     </li>
@@ -466,7 +465,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="status_array[]"
-                                                value="{{$item->id}}">
+                                                value="{{$item->id}}" {{ in_array($item->id, (array)request('status_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$item->status_name}} {{ $item->status_full_name ? '(' . $item->status_full_name . ')' : '' }}</span>
                                     </li>
@@ -485,7 +484,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="activity_time_array[]"
-                                                value="{{$activity_time->id}}">
+                                                value="{{$activity_time->id}}" {{ in_array($activity_time->id, (array)request('activity_time_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$activity_time->activity_name}}</span>
                                     </li>
@@ -504,7 +503,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="population_trending_array[]"
-                                                value="{{$population_trending->id}}">
+                                                value="{{$population_trending->id}}" {{ in_array($population_trending->id, (array)request('population_trending_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$population_trending->population_trending_name}}</span>
                                     </li>
@@ -523,7 +522,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="diet_type_array[]"
-                                                value="{{$diet_type->id}}">
+                                                value="{{$diet_type->id}}" {{ in_array($diet_type->id, (array)request('diet_type_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$diet_type->diet_name}}</span>
                                     </li>
@@ -542,7 +541,7 @@
                                     <li class="item">
                                         <span class="ml-2 mr-2">
                                             <input class="checkBox" type="checkbox" name="category_array[]"
-                                                value="{{$category->id}}">
+                                                value="{{$category->id}}" {{ in_array($category->id, (array)request('category_array')) ? 'checked' : '' }}>
                                         </span>
                                         <span class="item-text">{{$category->category_name}}</span>
                                     </li>
@@ -552,7 +551,7 @@
                     </div>
                 </div>
                 <div style="display: flex;justify-content: center;align-items:center;">
-                <input type="text" name="keyword" class="search-input" placeholder="Nhập tên động vật...">
+                <input type="text" name="keyword" class="search-input" placeholder="Nhập tên động vật..." value="{{ request('keyword') }}">
                     <button class="styled-button" type="submit">Tìm Kiếm</button>
                 </div>
             </form>
@@ -602,14 +601,17 @@
             btn.classList.toggle('open');
         });
 
+        // Restore count label on page load (after pagination / back from search)
+        let btnText = container.querySelector('.btn-text');
+        let checkedOnLoad = container.querySelectorAll('.checkBox:checked');
+        if (checkedOnLoad.length > 0) {
+            btnText.innerText = `${checkedOnLoad.length} lựa chọn`;
+        }
+
         items.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('checked');
-
-                let btnText = container.querySelector('.btn-text');
-                let checked = container.querySelectorAll('.checked');
-
-                if (checked && checked.length > 0) {
+            item.addEventListener('change', () => {
+                let checked = container.querySelectorAll('.checkBox:checked');
+                if (checked.length > 0) {
                     btnText.innerText = `${checked.length} lựa chọn`;
                 } else {
                     btnText.innerText = 'Tìm kiếm với nhiều điều kiện';

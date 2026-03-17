@@ -121,7 +121,7 @@ Route::post('/register', [LoginController::class, 'register'])->name('register')
 Route::prefix('animal_detail')->group(function () {
     Route::get('/view_animal_page', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
     Route::get('/view_search_filter', [AnimalDetailController::class, 'viewSearchFilter'])->name('user.view_search_filter');
-    Route::post('/search_filter', [AnimalDetailController::class, 'searchFilter'])->name('user.search_filter');
+    Route::match(['get', 'post'], '/search_filter', [AnimalDetailController::class, 'searchFilter'])->name('user.search_filter');
     Route::get('/color/{id}', [AnimalDetailController::class, 'color'])->name('color');
     Route::get('/climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate');
     Route::get('/nation/{id}', [AnimalDetailController::class, 'nation'])->name('user.nation');

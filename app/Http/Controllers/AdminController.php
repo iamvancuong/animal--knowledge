@@ -83,12 +83,19 @@ class AdminController extends Controller
     {
         $mode = 'edit';
         $currentUser = Auth::user();
+        $targetUser  = User::findOrFail($id);
+
+        if ($currentUser->role_id == User::ADMIN && $targetUser->role_id == User::SYSTEM) {
+            return redirect()->route('admin.list_user')
+                ->with('failed', 'Bạn không có quyền chỉnh sửa tài khoản hệ thống.');
+        }
+
         if ($currentUser->role_id == User::SYSTEM) {
             $roles = Role::whereIn('id', [User::ADMIN, User::USER])->get();
         } else {
             $roles = Role::where('id', User::USER)->get();
         }
-        $user = User::where('id', $id)->first();
+        $user = $targetUser;
         return view('admin.users.add-user', compact('mode', 'roles', 'user'));
     }
 
@@ -98,8 +105,8 @@ class AdminController extends Controller
         $data = $request->all();
 
         $currentUser = Auth::user();
-        $targetUser = User::find($id);
-        
+        $targetUser  = User::findOrFail($id);
+
         if ($currentUser->role_id == User::ADMIN) {
             if ($targetUser->role_id == User::SYSTEM || $data['role_id'] != User::USER) {
                 return redirect()->back()->with('failed', 'Bạn không có quyền cập nhật người dùng này.');
