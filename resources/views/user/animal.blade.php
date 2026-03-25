@@ -50,17 +50,17 @@
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>123 Street, New York, USA</small>
+                    <small>Van Hoi, Ha Noi</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
                     <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                    <small>Thứ 2 - Chủ Nhật : 09.00 AM - 17.00 PM</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+012 345 6789</small>
+                    <small>+ 84 88 616 515</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
@@ -238,13 +238,13 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Address</h5>
                     <p class="mb-2">
-                        <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+                        <i class="fa fa-map-marker-alt me-3"></i>Van Hoi, Ha Noi
                     </p>
                     <p class="mb-2">
-                        <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+                        <i class="fa fa-phone-alt me-3"></i>+ 84 88 616 5150
                     </p>
                     <p class="mb-2">
-                        <i class="fa fa-envelope me-3"></i>info@example.com
+                        <i class="fa fa-envelope me-3"></i>khamphadongvat@adw.com
                     </p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>

@@ -418,7 +418,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p><span class="text-primary me-2">#</span>Chào Mừng Đến Với Thế Giới Động Vật</p>
                     <h1 class="display-5 mb-4">
-                        Bạn Không Thể Đến Sở Thú .Đừng Lo Đã Có Trang Web
+                        Bạn Không Thể Đến <br> Sở Thú. Đừng Lo Đã Có Trang Web <br>
                         <span class="text-primary">Thế Giới Động Vật</span>
                     </h1>
                     <p class="mb-4">
@@ -460,22 +460,22 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-paw fa-3x text-primary mb-3"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">12345</h1>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">{{ $totalAnimals }}</h1>
                     <p class="text-white mb-0">Tổng số động vật</p>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <i class="fa fa-users fa-3x text-primary mb-3"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">12345</h1>
-                    <p class="text-white mb-0">Tổng số người xem</p>
+                    <i class="fas fa-file-alt fa-3x text-primary mb-3"></i>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">{{ $totalPosts }}</h1>
+                    <p class="text-white mb-0">Tổng số bài viết</p>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-certificate fa-3x text-primary mb-3"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">12345</h1>
+                    <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">{{ $totalMembers }}</h1>
                     <p class="text-white mb-0">Tổng số thành viên</p>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-shield-alt fa-3x text-primary mb-3"></i>
-                    <h1 class="text-white mb-2" data-toggle="counter-up">12345</h1>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">{{ $totalProtected }}</h1>
                     <p class="text-white mb-0">Bảo vệ động vật hoang dã</p>
                 </div>
             </div>
@@ -898,23 +898,23 @@
                                     <tbody>
                                         <tr>
                                             <td>Office</td>
-                                            <td>123 Street, New York, USA</td>
+                                            <td>Van Hoi, Ha Noi</td>
                                         </tr>
                                         <tr>
                                             <td>Zoo</td>
-                                            <td>123 Street, New York, USA</td>
+                                            <td>Van Hoi, Ha Noi</td>
                                         </tr>
                                         <tr>
                                             <td>Ticket</td>
                                             <td>
-                                                <p class="mb-2">+012 345 6789</p>
+                                                <p class="mb-2">+ 84 88 616 515</p>
                                                 <p class="mb-0">ticket@example.com</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Support</td>
                                             <td>
-                                                <p class="mb-2">+012 345 6789</p>
+                                                <p class="mb-2">+ 84 88 616 515</p>
                                                 <p class="mb-0">support@example.com</p>
                                             </td>
                                         </tr>
@@ -979,7 +979,7 @@
                     <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-                                src="{{ asset('users/img/testimonial-1.jpg') }}" style="width: 100px; height: 100px" />
+                                src="https://ui-avatars.com/api/?name=Bá+Thị+Thư&background=198754&color=fff&size=100" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
                                     Website khám phá động vật hoang dã là một nền tảng thú vị cho những người yêu thích
@@ -992,7 +992,7 @@
                         </div>
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-                                src="{{ asset('users/img/testimonial-2.jpg') }}" style="width: 100px; height: 100px" />
+                                src="https://ui-avatars.com/api/?name=Nguyễn+Đăng+Nhân&background=0d6efd&color=fff&size=100" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
                                     Trang web khám phá động vật hoang dã không chỉ cung cấp kiến thức sâu sắc về các loài
@@ -1005,7 +1005,7 @@
                         </div>
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-                                src="{{ asset('users/img/testimonial-3.jpg') }}" style="width: 100px; height: 100px" />
+                                src="https://ui-avatars.com/api/?name=Trương+Văn+Cường&background=dc3545&color=fff&size=100" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
                                     Trang web khám phá động vật hoang dã cung cấp một cửa sổ rộng mở vào thế giới tự nhiên,

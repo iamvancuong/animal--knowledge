@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Biểu đồ Use Case - Thông tin động vật</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      background-color: #f7f9fc;
+    }
+
+    .mermaid-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mermaid-container">
+    <!-- Đây là thư viện Mermaid sẽ tự động vẽ biểu đồ khi bạn mở file này bằng trình duyệt -->
+    <div class="mermaid">
+      flowchart LR
+      %% ====== CẤU HÌNH STYLE ======
+      classDef actor fill:#fbd46d,stroke:#b8860b,stroke-width:2px,color:#000
+      classDef uc_guest fill:#e3f2fd,stroke:#1e88e5,stroke-width:2px,color:#000
+      classDef uc_user fill:#e8f5e9,stroke:#43a047,stroke-width:2px,color:#000
+      classDef uc_admin fill:#fff3e0,stroke:#fb8c00,stroke-width:2px,color:#000
+      classDef uc_sys fill:#fce4ec,stroke:#d81b60,stroke-width:2px,color:#000
+
+      %% ====== TÁC NHÂN BÊN TRÁI ======
+      Guest(("Khách<br>vãng lai")):::actor
+      User(("Người<br>dùng")):::actor
+      User -.->|Kế thừa| Guest
+
+      %% ====== TÁC NHÂN BÊN PHẢI ======
+      Admin(("Quản trị<br>viên")):::actor
+      SysAdmin(("Quản trị<br>hệ thống")):::actor
+      SysAdmin -.->|Kế thừa| Admin
+
+      %% ====== HỆ THỐNG ======
+      subgraph System [HỆ THỐNG QUẢN LÝ VÀ CUNG CẤP THÔNG TIN ĐỘNG VẬT]
+      direction TB
+
+      %% Cột 1: Khách
+      UC1([Đăng ký tài khoản]):::uc_guest
+      UC2([Xem danh sách & Chi tiết động vật]):::uc_guest
+      UC3([Tìm kiếm động vật]):::uc_guest
+      UC4([Xem bài viết]):::uc_guest
+
+      %% Cột 2: User
+      UC5([Đăng nhập / Đăng xuất]):::uc_user
+      UC6([Lọc động vật chuyên sâu]):::uc_user
+      UC7([Tạo bài, Bình luận, Thích]):::uc_user
+      UC8([Tham gia Game & Nhận thưởng]):::uc_user
+      UC9([Quản lý hồ sơ cá nhân]):::uc_user
+
+      %% Cột 3: Admin
+      UC10([Quản lý thông tin động vật]):::uc_admin
+      UC11([Quản lý danh sách User]):::uc_admin
+      UC12([Quản lý Diễn đàn]):::uc_admin
+      UC13([Quản lý Game & Câu hỏi]):::uc_admin
+      UC14([Lịch sử nhận thưởng]):::uc_admin
+
+      %% Cột 4: SysAdmin
+      UC15([Quản lý tài khoản Admin]):::uc_sys
+      UC16([Quản lý vai trò & Phân quyền]):::uc_sys
+      end
+
+      %% Style cho system box (Ẩn viền vuông theo yêu cầu)
+      style System fill:transparent,stroke:none
+
+      %% ====== KẾT NỐI TÁC NHÂN BÊN TRÁI ======
+      Guest --- UC1
+      Guest --- UC2
+      Guest --- UC3
+      Guest --- UC4
+
+      User --- UC5
+      User --- UC6
+      User --- UC7
+      User --- UC8
+      User --- UC9
+
+      %% ====== KẾT NỐI TÁC NHÂN BÊN PHẢI ======
+      UC10 --- Admin
+      UC11 --- Admin
+      UC12 --- Admin
+      UC13 --- Admin
+      UC14 --- Admin
+
+      UC15 --- SysAdmin
+      UC16 --- SysAdmin
+
+      %% ====== SẮP XẾP CỘT (Ẩn) ======
+      UC1 ~~~ UC5
+      UC5 ~~~ UC10
+      UC10 ~~~ UC15
+    </div>
+  </div>
+</body>
+
+</html>

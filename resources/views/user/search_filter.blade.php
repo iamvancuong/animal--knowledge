@@ -147,6 +147,24 @@
         padding: 16px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         display: none;
+        max-height: 250px;
+        overflow-y: auto;
+    }
+
+    /* Tùy chỉnh thanh cuộn cho mượt mà (Tùy chọn) */
+    .list-items::-webkit-scrollbar {
+        width: 6px;
+    }
+    .list-items::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius: 8px;
+    }
+    .list-items::-webkit-scrollbar-thumb {
+        background: #c0c0c0; 
+        border-radius: 8px;
+    }
+    .list-items::-webkit-scrollbar-thumb:hover {
+        background: #2EB872; 
     }
 
     .btn-select.open~.list-items {
@@ -280,12 +298,6 @@
             cursor: pointer; /* Pointer/hand icon */
             border-radius: 12px; /* Rounded corners */
             transition-duration: 0.4s; /* 0.4 second transition effect to hover */
-        }
-
-        .styled-button:hover {
-            background-color: white; /* White background on hover */
-            color: black; /* Black text on hover */
-            border: 2px solid #4CAF50; /* Green border on hover */
         }
 
         .search-input {
@@ -550,9 +562,14 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: flex;justify-content: center;align-items:center;">
-                <input type="text" name="keyword" class="search-input" placeholder="Nhập tên động vật..." value="{{ request('keyword') }}">
+                <div style="display: flex;justify-content: center;align-items:center; gap: 10px; margin-top: 15px;">
+                    <input type="text" name="keyword" class="search-input" placeholder="Nhập tên động vật..." value="{{ request('keyword') }}">
+                </div>
+                <div style="display: flex;justify-content: center;align-items:center; gap: 10px; margin-top: 15px;">
                     <button class="styled-button" type="submit">Tìm Kiếm</button>
+                    <a href="{{ route('user.search_filter') }}" class="styled-button" style="background-color: #6c757d; color: white !important; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+                        Xóa Bộ Lọc
+                    </a>
                 </div>
             </form>
         </div>

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class AnimalDetail extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
     protected $table = 'animal_detail';
     protected $fillable = 
     ['animal_name','animal_scientific_name','animal_description','appearance_description',
@@ -78,5 +79,15 @@ class AnimalDetail extends Model
     public function activityTime()
     {
         return $this->belongsTo(ActivityTime::class,'activity_time_id');
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'animal_name' => $this->animal_name,
+            'animal_name_unaccented' => \Illuminate\Support\Str::ascii($this->animal_name),
+            'animal_scientific_name' => $this->animal_scientific_name,
+        ];
     }
 }

@@ -52,7 +52,14 @@ class AnimalDetailController extends Controller
         $dietType4 = DietType::where('id', DietType::FOLIVORES)->first();
         $dietType5 = DietType::where('id', DietType::INSECTIVORES)->first();
 
-        return view('user.home', compact('areas', 'tropical', 'arid', 'temperate', 'cold', 'polar', 'green', 'blue', 'red', 'yellow', 'orange', 'brown', 'white', 'black', 'gray', 'purple', 'pacific', 'indian', 'atlantic', 'arctic', 'activityTime', 'dietType1', 'dietType2', 'dietType3', 'dietType4', 'dietType5'));
+        // Real Statistics for Homepage Facts
+        $totalAnimals = AnimalDetail::count();
+        $totalPosts = Post::count();
+        $totalMembers = \App\Models\User::count();
+        // conservation_status_id >= 4 là động vật đang/sắp bị đe dọa (cần bảo vệ)
+        $totalProtected = AnimalDetail::where('conservation_status_id', '>=', 4)->count();
+
+        return view('user.home', compact('areas', 'tropical', 'arid', 'temperate', 'cold', 'polar', 'green', 'blue', 'red', 'yellow', 'orange', 'brown', 'white', 'black', 'gray', 'purple', 'pacific', 'indian', 'atlantic', 'arctic', 'activityTime', 'dietType1', 'dietType2', 'dietType3', 'dietType4', 'dietType5', 'totalAnimals', 'totalPosts', 'totalMembers', 'totalProtected'));
     }
 
     public function viewAnimalBlog()
@@ -150,39 +157,41 @@ class AnimalDetailController extends Controller
         $arrayDietType           = $request->input('diet_type_array');
         $arrayCategory           = $request->input('category_array');
         $keyWord                 = $request->input('keyword');
-
-        $data = AnimalDetail::with(['images:id,detail_id,image_name'])
-            ->when($arrayArea, fn($q) =>
-                $q->whereHas('areas', fn($q2) => $q2->whereIn('area_id', $arrayArea))
-            )
-            ->when($arrayNation, fn($q) =>
-                $q->whereHas('nations', fn($q2) => $q2->whereIn('nation_id', $arrayNation))
-            )
-            ->when($arrayClimate, fn($q) =>
-                $q->whereHas('climates', fn($q2) => $q2->whereIn('climate_id', $arrayClimate))
-            )
-            ->when($arrayBiome, fn($q) =>
-                $q->whereHas('biomes', fn($q2) => $q2->whereIn('biome_id', $arrayBiome))
-            )
-            ->when($arrayColor, fn($q) =>
-                $q->whereHas('colors', fn($q2) => $q2->whereIn('color_id', $arrayColor))
-            )
-            ->when($arrayOcean, fn($q) =>
-                $q->whereHas('oceans', fn($q2) => $q2->whereIn('ocean_id', $arrayOcean))
-            )
-            ->when($arrayStatus,             fn($q) => $q->whereIn('conservation_status_id', $arrayStatus))
-            ->when($arrayActivityTime,       fn($q) => $q->whereIn('activity_time_id', $arrayActivityTime))
-            ->when($arrayPopulationTrending, fn($q) => $q->whereIn('population_trending_id', $arrayPopulationTrending))
-            ->when($arrayDietType,           fn($q) => $q->whereIn('diet_type_id', $arrayDietType))
-            ->when($arrayCategory,           fn($q) => $q->whereIn('category_id', $arrayCategory))
-            ->when($keyWord, fn($q) =>
-                $q->where(fn($q2) =>
-                    $q2->where('animal_name', 'like', '%' . $keyWord . '%')
-                       ->orWhere('animal_scientific_name', 'like', '%' . $keyWord . '%')
+        dd($request->all());
+        $filterClosure = function ($q) use ($arrayArea, $arrayNation, $arrayClimate, $arrayBiome, $arrayColor, $arrayOcean, $arrayStatus, $arrayActivityTime, $arrayPopulationTrending, $arrayDietType, $arrayCategory) {
+            $q->with(['images:id,detail_id,image_name'])
+                ->when($arrayArea, fn($q2) =>
+                    $q2->whereHas('areas', fn($q3) => $q3->whereIn('area_id', $arrayArea))
                 )
-            )
-            ->orderBy('id', 'desc')
-            ->paginate(5)->withQueryString();
+                ->when($arrayNation, fn($q2) =>
+                    $q2->whereHas('nations', fn($q3) => $q3->whereIn('nation_id', $arrayNation))
+                )
+                ->when($arrayClimate, fn($q2) =>
+                    $q2->whereHas('climates', fn($q3) => $q3->whereIn('climate_id', $arrayClimate))
+                )
+                ->when($arrayBiome, fn($q2) =>
+                    $q2->whereHas('biomes', fn($q3) => $q3->whereIn('biome_id', $arrayBiome))
+                )
+                ->when($arrayColor, fn($q2) =>
+                    $q2->whereHas('colors', fn($q3) => $q3->whereIn('color_id', $arrayColor))
+                )
+                ->when($arrayOcean, fn($q2) =>
+                    $q2->whereHas('oceans', fn($q3) => $q3->whereIn('ocean_id', $arrayOcean))
+                )
+                ->when($arrayStatus,             fn($q2) => $q2->whereIn('conservation_status_id', $arrayStatus))
+                ->when($arrayActivityTime,       fn($q2) => $q2->whereIn('activity_time_id', $arrayActivityTime))
+                ->when($arrayPopulationTrending, fn($q2) => $q2->whereIn('population_trending_id', $arrayPopulationTrending))
+                ->when($arrayDietType,           fn($q2) => $q2->whereIn('diet_type_id', $arrayDietType))
+                ->when($arrayCategory,           fn($q2) => $q2->whereIn('category_id', $arrayCategory));
+        };
+
+        if (!empty($keyWord)) {
+            $data = AnimalDetail::search($keyWord)->query($filterClosure)->paginate(5)->withQueryString();
+        } else {
+            $data = AnimalDetail::query();
+            $filterClosure($data);
+            $data = $data->orderBy('id', 'desc')->paginate(5)->withQueryString();
+        }
 
         return view('user.search_filter', compact('areas', 'climates', 'biomes', 'nations', 'colors', 'oceans', 'status', 'activity_times', 'population_trendings', 'diet_types', 'categories', 'data'));
     }

@@ -5,13 +5,13 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Địa Chỉ</h5>
                 <p class="mb-2">
-                    <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+                    <i class="fa fa-map-marker-alt me-3"></i>Van Hoi, Ha Noi
                 </p>
                 <p class="mb-2">
                     <i class="fa fa-phone-alt me-3"></i>+024 3852 2201
                 </p>
                 <p class="mb-2">
-                    <i class="fa fa-envelope me-3"></i>info@example.com
+                    <i class="fa fa-envelope me-3"></i>khamphadongvat@adw.com
                 </p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>

@@ -1,5 +1,5 @@
 @extends('user.main')
-@section('title', 'Contract')
+@section('title', 'Liên hệ')
 @section('content_user')
     <!-- Contact Start -->
     <div class="container-xxl py-5">
@@ -12,9 +12,9 @@
               </div>
               <div class="ms-4">
                 <p class="mb-2">
-                  <span class="text-primary me-2">#</span>Address
+                  <span class="text-primary me-2">#</span>Địa chỉ
                 </p>
-                <h5 class="mb-0">123 Street, New York, USA</h5>
+                <h5 class="mb-0">Van Hoi, Ha Noi</h5>
               </div>
             </div>
           </div>
@@ -25,9 +25,9 @@
               </div>
               <div class="ms-4">
                 <p class="mb-2">
-                  <span class="text-primary me-2">#</span>Call Now
+                  <span class="text-primary me-2">#</span>Gọi ngay
                 </p>
-                <h5 class="mb-0">+012 345 6789</h5>
+                <h5 class="mb-0">+ 84 88 616 515</h5>
               </div>
             </div>
           </div>
@@ -38,22 +38,21 @@
               </div>
               <div class="ms-4">
                 <p class="mb-2">
-                  <span class="text-primary me-2">#</span>Mail Now
+                  <span class="text-primary me-2">#</span>Gửi Email
                 </p>
-                <h5 class="mb-0">info@example.com</h5>
+                <h5 class="mb-0">khamphadongvat@adw.com</h5>
               </div>
             </div>
           </div>
         </div>
         <div class="row g-5">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <p><span class="text-primary me-2">#</span>Contact Us</p>
-            <h1 class="display-5 mb-4">Have Any Query? Please Contact Us!</h1>
+            <p><span class="text-primary me-2">#</span>Liên hệ với chúng tôi</p>
+            <h1 class="display-5 mb-4">Bạn có bất kỳ câu hỏi nào? Vui lòng liên hệ với chúng tôi!</h1>
             <p class="mb-4">
-              The contact form is currently inactive. Get a functional and
-              working contact form with Ajax & PHP in a few minutes. Just copy
-              and paste the files, add a little code and you're done.
-              <a href="https://htmlcodex.com/contact-form">Download Now</a>.
+              Nếu bạn có bất kỳ thắc mắc hoặc cần hỗ trợ, đừng ngần ngại liên hệ với chúng tôi.
+              Chúng tôi luôn sẵn sàng lắng nghe và giải đáp mọi yêu cầu của bạn một cách nhanh chóng.
+              Hãy điền thông tin vào biểu mẫu bên dưới và chúng tôi sẽ phản hồi lại sớm nhất có thể.
             </p>
             <form>
               <div class="row g-3">
@@ -63,9 +62,9 @@
                       type="text"
                       class="form-control bg-light border-0"
                       id="name"
-                      placeholder="Your Name"
+                      placeholder="Tên của bạn"
                     />
-                    <label for="name">Your Name</label>
+                    <label for="name">Tên của bạn</label>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -74,9 +73,9 @@
                       type="email"
                       class="form-control bg-light border-0"
                       id="email"
-                      placeholder="Your Email"
+                      placeholder="Email của bạn"
                     />
-                    <label for="email">Your Email</label>
+                    <label for="email">Email của bạn</label>
                   </div>
                 </div>
                 <div class="col-12">
@@ -85,25 +84,25 @@
                       type="text"
                       class="form-control bg-light border-0"
                       id="subject"
-                      placeholder="Subject"
+                      placeholder="Tiêu đề"
                     />
-                    <label for="subject">Subject</label>
+                    <label for="subject">Tiêu đề</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
                     <textarea
                       class="form-control bg-light border-0"
-                      placeholder="Leave a message here"
+                      placeholder="Để lại lời nhắn tại đây"
                       id="message"
                       style="height: 100px"
                     ></textarea>
-                    <label for="message">Message</label>
+                    <label for="message">Lời nhắn</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <button class="btn btn-primary w-100 py-3" type="submit">
-                    Send Message
+                    Gửi tin nhắn
                   </button>
                 </div>
               </div>
@@ -113,7 +112,7 @@
             <div class="h-100" style="min-height: 400px">
               <iframe
                 class="rounded w-100 h-100"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                src="https://www.google.com/maps?q=Văn%20Hội,%20Hà%20Nội&output=embed"
                 frameborder="0"
                 allowfullscreen=""
                 aria-hidden="false"

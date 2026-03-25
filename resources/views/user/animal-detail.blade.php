@@ -170,97 +170,67 @@
                 <p></p>
             </div>
             <div class="s-char-status">
-                <a href="#" title="Crepuscular" data-url="crepuscular" class="s-char-status-item "
-                    style="background-color:#757575">
-                    <p>Cr</p>
-                    <span>Crepuscular</span>
+                {{-- Tập tính sinh hoạt (Activity Time) --}}
+                @if($data->activityTime)
+                <a href="{{ route('user.activity_time', ['id' => $data->activityTime->id]) }}" title="{{ $data->activityTime->activity_name }}" class="s-char-status-item" style="background-color:#424242">
+                    <p>{{ mb_substr($data->activityTime->activity_name, 0, 2) }}</p>
+                    <span>{{ $data->activityTime->activity_name }}</span>
                 </a>
-                <a href="#" title="Nocturnal" data-url="nocturnal" class="s-char-status-item "
-                    style="background-color:#424242">
-                    <p>No</p>
-                    <span>Nocturnal</span>
+                @endif
+
+                {{-- Chế độ ăn (Diet Type) --}}
+                @if($data->diet)
+                <a href="{{ route('user.diet_type', ['id' => $data->diet->id]) }}" title="{{ $data->diet->diet_name }}" class="s-char-status-item" style="background-color:#9CCC65">
+                    <p>{{ mb_substr($data->diet->diet_name, 0, 2) }}</p>
+                    <span>{{ $data->diet->diet_name }}</span>
                 </a>
-                <a href="#" title="Omnivore" data-url="omnivore" class="s-char-status-item "
-                    style="background-color:#9CCC65">
-                    <p>Om</p>
-                    <span>Omnivore</span>
+                @endif
+
+                {{-- Xu hướng quần thể (Population Trend) --}}
+                @if($data->trend)
+                <a href="{{ route('user.population_trending', ['id' => $data->trend->id]) }}" title="{{ $data->trend->population_trending_name }}" class="s-char-status-item" style="background-color:#d52828">
+                    <p>{{ mb_substr($data->trend->population_trending_name, 0, 1) }}</p>
+                    <span>Xu hướng: {{ $data->trend->population_trending_name }}</span>
                 </a>
-                <a href="#" title="Scavenger" data-url="scavenger" class="s-char-status-item "
-                    style="background-color:#80052d">
-                    <p>Sc</p>
-                    <span>Scavenger</span>
+                @endif
+
+                {{-- Tình trạng bảo tồn (Conservation Status) --}}
+                @if($data->status)
+                <a href="{{ route('user.conservation_status', ['id' => $data->status->id]) }}" title="{{ $data->status->status_full_name }}" class="s-char-status-item" style="background-color:#80052d">
+                    <p>{{ $data->status->status_name }}</p>
+                    <span>{{ $data->status->status_full_name }}</span>
                 </a>
-                <a href="#" title="Terrestrial" data-url="terrestrial" class="s-char-status-item "
-                    style="background-color:#43350a">
-                    <p>Te</p>
-                    <span>Terrestrial</span>
-                </a>
-                <a href="#" title="Altricial" data-url="altricial-animals" class="s-char-status-item "
-                    style="background-color:#f52a2a">
-                    <p>Al</p>
-                    <span>Altricial</span>
-                </a>
-                <a href="#" title="Territorial" data-url="territorial" class="s-char-status-item "
-                    style="background-color:#d52828">
-                    <p>Te</p>
-                    <span>Territorial</span>
-                </a>
-                <a href="#" title="Viviparous" data-url="viviparous" class="s-char-status-item "
-                    style="background-color:#6b62b9">
-                    <p>Vi</p>
-                    <span>Viviparous</span>
-                </a>
-                <a href="#" title="Burrowing" data-url="burrow" class="s-char-status-item "
-                    style="background-color:#5D4037">
-                    <p>Bu</p>
-                    <span>Burrowing</span>
-                </a>
-                <a href="#" title="Predator" data-url="predator" class="s-char-status-item "
-                    style="background-color:#a90505">
-                    <p>Pr</p>
-                    <span>Predator</span>
-                </a>
-                <a href="#" title="Bright" data-url="bright" class="s-char-status-item "
-                    style="background-color:#e7cf58">
-                    <p>Br</p>
-                    <span>Bright</span>
-                </a>
-                <a href="#" title="Cute" data-url="cute" class="s-char-status-item "
-                    style="background-color:#0ca6cd">
-                    <p>Cu</p>
-                    <span>Cute</span>
-                </a>
-                <a href="#" title="Monogamy" data-url="monogamy" class="s-char-status-item "
-                    style="background-color:#d83e75">
-                    <p>Mo</p>
-                    <span>Monogamy</span>
-                </a>
-                <a href="#" title="Social" data-url="social-animals" class="s-char-status-item "
-                    style="background-color:#FB8C00">
-                    <p>So</p>
-                    <span>Social</span>
-                </a>
-                <a href="#" title="Dominance hierarchy" data-url="dominance-hierarchy" class="s-char-status-item "
-                    style="background-color:#e62828">
-                    <p>Do</p>
-                    <span>Dominance hierarchy</span>
-                </a>
-                <a href="#" title="Not a migrant" data-url="not-a-migrant" class="s-char-status-item "
-                    style="background-color:#6c2139">
-                    <p>No</p>
-                    <span>Not a migrant</span>
-                </a>
-                <a href="#" title="Canada Province Animals"
-                    class="s-char-status-item s-char-status-item-collection"
-                    style="background:url(https://s3.animalia.bio/animals/photos/full/1.25x1/moose-alces-alces.webp)">
-                    <p>Ca</p>
-                    <span>Canada Province Animals<br> (collection)</span>
-                </a>
-                <a href="#" title="Fluffy Animals" class="s-char-status-item s-char-status-item-collection"
-                    style="background:url(https://s3.animalia.bio/animals/photos/full/1.25x1/dscf-227101995jpeg.webp)">
-                    <p>Fl</p>
-                    <span>Fluffy Animals<br> (collection)</span>
-                </a>
+                @endif
+
+                {{-- Môi trường sống (Biomes) --}}
+                @if(isset($data->biomes))
+                    @foreach($data->biomes as $biome)
+                    <a href="{{ route('biome', ['id' => $biome->id]) }}" title="{{ $biome->biome_name }}" class="s-char-status-item" style="background-color:#6b62b9">
+                        <p>{{ mb_substr($biome->biome_name, 0, 2) }}</p>
+                        <span>{{ $biome->biome_name }}</span>
+                    </a>
+                    @endforeach
+                @endif
+
+                {{-- Khí hậu (Climates) --}}
+                @if(isset($data->climates))
+                    @foreach($data->climates as $climate)
+                    <a href="{{ route('climate-zone', ['id' => $climate->id]) }}" title="{{ $climate->climate_name }}" class="s-char-status-item" style="background-color:#0ca6cd">
+                        <p>{{ mb_substr($climate->climate_name, 0, 2) }}</p>
+                        <span>{{ $climate->climate_name }}</span>
+                    </a>
+                    @endforeach
+                @endif
+
+                {{-- Màu sắc (Colors) --}}
+                @if(isset($data->colors))
+                    @foreach($data->colors as $color)
+                    <a href="#" title="{{ $color->color_name }}" class="s-char-status-item" style="background-color:#FB8C00">
+                        <p>{{ mb_substr($color->color_name, 0, 2) }}</p>
+                        <span>Màu: {{ $color->color_name }}</span>
+                    </a>
+                    @endforeach
+                @endif
             </div>
             <section class="s-ad-banner-horizontal">
                 <div class="container" style="text-align: center;">

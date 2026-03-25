@@ -1744,5 +1744,164 @@ Loài này săn mồi và bắt con mồi nhanh đến mức con người gần 
             ]
         );
 
+        // --- BỔ SUNG ĐỘNG VẬT VIỆT NAM CHO ĐỒ ÁN ---
+        DB::table('animal_detail')->insert([
+            [
+                'animal_name' => 'Sao la',
+                'animal_scientific_name' => 'Pseudoryx nghetinhensis',
+                'animal_description' => 'Sao la, hay còn được gọi là "Kỳ lân châu Á", là một trong những loài thú hiếm nhất trên thế giới sinh sống trong vùng núi rừng Trường Sơn tại Việt Nam và Lào. Được phát hiện lần đầu tiên vào năm 1992, sự hiện diện của sao la đã gây chấn động giới sinh học toàn cầu.',
+                'appearance_description' => 'Sao la có bộ lông màu nâu sẫm, sừng dài, nhọn và mọc thẳng song song. Hai bên mặt có các đốm trắng nổi bật. Cơ thể săn chắc thon gọn giúp chúng di chuyển dễ dàng trong rừng rậm.',
+                'geography_description' => 'Sao la chỉ được tìm thấy tại vùng núi rừng Trường Sơn hùng vĩ, khu vực giáp ranh giữa Việt Nam và Lào.',
+                'habit_lifestyle_description' => 'Chúng rất nhút nhát và hiếm khi xuất hiện trước con người. Hoạt động chủ yếu vào ban ngày và sống đơn độc hoặc thành từng nhóm nhỏ.',
+                'diet_nutrition_description' => 'Sao la là loài ăn thực vật, chủ yếu ăn các loại lá cây, dương xỉ và thực vật có thân mềm ven suối.',
+                'mating_habit_description' => 'Rất ít thông tin về tập tính sinh sản của sao la do chúng quá hiếm gặp trong tự nhiên.',
+                'mating_behavior' => 'Chưa rõ',
+                'reproduction_season' => 'Mùa mưa',
+                'pregnancy_duration' => 'Chưa rõ',
+                'baby_carrying' => '1 con',
+                'independent_age' => 'Chưa rõ',
+                'population_threat' => 'Mối đe dọa chính là nạn săn bắt trộm bằng bẫy dây và sự suy giảm môi trường sống do phá rừng.',
+                'population_number' => 'Ước tính chỉ còn dưới 100 cá thể trong tự nhiên. Được xếp vào mức Cực kỳ nguy cấp (CE).',
+                'ecological_niche' => 'Đóng vai trò quan trọng trong việc cân bằng thực vật rừng Trường Sơn.',
+                'fun_fact' => 'Dù là họ hàng gần của bò, sao la lại trông giống với một loài linh dương xa lạ ở Châu Phi. Sừng sao la có thể dài tới 50cm.',
+                'top_speed' => '40',
+                'animal_length' => '130-150',
+                'animal_weight' => '80-100',
+                'animal_swing' => '',
+                'population_size' => '< 100',
+                'avg_lifespan' => '8-12 năm',
+                'animal_sound' => '',
+                'animal_video' => 'https://www.youtube.com/embed/Z80ZInLOKpI',
+                'conservation_status_id' => '5',
+                'activity_time_id' => '1',
+                'diet_type_id' => '4',
+                'category_id' => '5',
+                'population_trending_id' => '2',
+            ],
+            [
+                'animal_name' => 'Voọc Chà Vá Chân Nâu',
+                'animal_scientific_name' => 'Pygathrix nemaeus',
+                'animal_description' => 'Được mệnh danh là "nữ hoàng linh trưởng", voọc chà vá chân nâu là biểu tượng đa dạng sinh học của Việt Nam và Lào. Chúng phân bố mạnh ở Bán đảo Sơn Trà (Đà Nẵng).',
+                'appearance_description' => 'Bộ lông rực rỡ ngũ sắc: chân màu nâu đỏ, đùi đen, ngực xám bọc viền đỏ, và khuôn mặt màu cam nhạt rạng rỡ.',
+                'geography_description' => 'Sống tại các khu rừng nhiệt đới gió mùa tại trung bộ Việt Nam, đặc biệt là Bán đảo Sơn Trà hoang sơ.',
+                'habit_lifestyle_description' => 'Chúng chỉ sống trên các tán lá cao, không bao giờ xuống đất. Voọc sống thành bầy đàn từ 5 tới hàng chục cá thể với trật tự kỷ luật nghiêm ngặt.',
+                'diet_nutrition_description' => 'Chỉ ăn lá non, hoa, trái cây chưa chín. Ruột của chúng có vi khuẩn để phân giải lá độc.',
+                'mating_habit_description' => 'Mùa sinh sản rõ rệt, kết đôi vào khoảng giữa năm, sinh ra mỗi lần 1 con voọc con với bộ lông vàng tươi.',
+                'mating_behavior' => 'Đa thê',
+                'reproduction_season' => 'Mùa Hè-Thu',
+                'pregnancy_duration' => '165-190 ngày',
+                'baby_carrying' => '1 con',
+                'independent_age' => '3 tuổi',
+                'population_threat' => 'Mất môi trường sống do các khu du lịch nghỉ dưỡng và nạn lén săn bắt trộm lấy thịt.',
+                'population_number' => 'Hàng ngàn cá thể tại các khoảnh rừng Đông Dương. Được bảo vệ nghiêm ngặt.',
+                'ecological_niche' => 'Đóng vai trò quan trọng trong việc duy trì tán rừng nhiệt đới thông qua phát tán hạt giống.',
+                'fun_fact' => 'Dạ dày vượn rất to chiếm 1/3 cơ thể chuyên để tiêu hoá lá cây. Chúng lấy nước uống nhờ sương đọng trên lá.',
+                'top_speed' => 'Bật nhảy 5m',
+                'animal_length' => '61 cm',
+                'animal_weight' => '8-11 kg',
+                'animal_swing' => '80 cm',
+                'population_size' => '< 3000',
+                'avg_lifespan' => '25 năm',
+                'animal_sound' => '',
+                'animal_video' => 'https://www.youtube.com/watch?v=jAmY3BpWQys',
+                'conservation_status_id' => '4',
+                'activity_time_id' => '1',
+                'diet_type_id' => '4',
+                'category_id' => '5',
+                'population_trending_id' => '2',
+            ],
+            [
+                'animal_name' => 'Vượn Đen Má Vàng Nam',
+                'animal_scientific_name' => 'Nomascus gabriellae',
+                'animal_description' => 'Loài linh trưởng đặc hữu cực kỳ quý hiếm của vùng Nam Trung Bộ Việt Nam và Đông Nam Campuchia, nổi tiếng với những bài hát vang vọng cánh rừng.',
+                'appearance_description' => 'Con đực trưởng thành có bộ lông đen với hai mảng má màu vàng nổi bật, trong khi con cái và vượn non có lông màu vàng be hoặc rơm nhạt.',
+                'geography_description' => 'Sống tập trung ở các VQG như Cát Tiên, Bù Gia Mập và rừng nguyên sinh Đắk Lắk.',
+                'habit_lifestyle_description' => 'Giao tiếp hằng ngày bằng các bài hát hòa âm lớn vào mỗi buổi sáng bình minh. Khả năng leo chuyền cành thần tốc.',
+                'diet_nutrition_description' => 'Trái cây, lá cây nhiệt đới, thi thoảng bổ sung đạm bằng chim nhỏ, nhện, côn trùng.',
+                'mating_habit_description' => 'Chung thủy theo chế độ một cha một mẹ, chăm sóc con cái rất chu đáo trong nhiều năm.',
+                'mating_behavior' => 'Đơn phối ngẫu',
+                'reproduction_season' => 'Quanh năm',
+                'pregnancy_duration' => '200 ngày',
+                'baby_carrying' => '1 con',
+                'independent_age' => '4 năm',
+                'population_threat' => 'Rừng bị phân mảnh dẫn tới các gia đình vượn bị cô lập hóa di truyền.',
+                'population_number' => 'Rơi vào cấp độ nguy cấp (EN) do lượng cá thể giảm.',
+                'ecological_niche' => 'Một trong những loài quan trọng nhất để gieo rắc hạt giống trái cây rừng qua phân.',
+                'fun_fact' => 'Bài hát của vượn có thể vang xa tới 2km trong rừng, kéo dài từ 10 đến 15 phút, được coi là phương thức đính ước lãnh thổ.',
+                'top_speed' => 'Đu cành nước rút 55km/h',
+                'animal_length' => '60 cm',
+                'animal_weight' => '7 kg',
+                'animal_swing' => 'Khả năng sải tay 100 cm',
+                'population_size' => '< 2500',
+                'avg_lifespan' => '28 năm',
+                'animal_sound' => '',
+                'animal_video' => 'https://www.youtube.com/watch?v=3s04c6TEZ_c',
+                'conservation_status_id' => '4',
+                'activity_time_id' => '1',
+                'diet_type_id' => '3',
+                'category_id' => '5',
+                'population_trending_id' => '2',
+            ]
+        ]);
+
+        // Insert Image
+        $newAnimalImages = [];
+        $imgNames = [
+            21 => 'saola',
+            22 => 'vooc_cha_va',
+            23 => 'vuon_ma_vang'
+        ];
+        foreach ($imgNames as $detId => $baseNm) {
+            $newAnimalImages[] = ['detail_id' => $detId, 'image_name' => $baseNm . '.jpg'];
+            for($idx = 1; $idx <= 4; $idx++) {
+                $newAnimalImages[] = ['detail_id' => $detId, 'image_name' => $baseNm . $idx . '.jpg'];
+            }
+        }
+        DB::table('image')->insert($newAnimalImages);
+
+        // Insert Nation Pivot (189 = Vietnam)
+        DB::table('animal_between_nation')->insert([
+            ['animal_detail_id' => 21, 'nation_id' => 189],
+            ['animal_detail_id' => 22, 'nation_id' => 189],
+            ['animal_detail_id' => 23, 'nation_id' => 189],
+        ]);
+
+        // Insert Area Pivot (2 = Châu Á)
+        DB::table('animal_between_area')->insert([
+            ['animal_detail_id' => 21, 'area_id' => 2],
+            ['animal_detail_id' => 22, 'area_id' => 2],
+            ['animal_detail_id' => 23, 'area_id' => 2],
+        ]);
+
+        // Insert Climate Pivot (1 = Vùng nhiệt đới, 3 = Vùng ôn đới)  
+        DB::table('animal_between_climate')->insert([
+            ['animal_detail_id' => 21, 'climate_id' => 1],
+            ['animal_detail_id' => 22, 'climate_id' => 1],
+            ['animal_detail_id' => 23, 'climate_id' => 1],
+        ]);
+
+        // Insert Biome Pivot (8 = Núi, 9 = Rừng, 19 = Rừng nhiệt đới)
+        DB::table('animal_between_biome')->insert([
+            ['animal_detail_id' => 21, 'biome_id' => 8],
+            ['animal_detail_id' => 21, 'biome_id' => 9],
+            ['animal_detail_id' => 22, 'biome_id' => 19],
+            ['animal_detail_id' => 23, 'biome_id' => 19],
+        ]);
+
+        // Insert Color Pivot (1 = Xanh lục, 6 = Nâu, 7 = Trắng, 8 = Đen, 4 = Vàng, 5=Cam)
+        DB::table('animal_between_color')->insert([
+            // Saola: Nâu, Trắng
+            ['animal_detail_id' => 21, 'color_id' => 6],
+            ['animal_detail_id' => 21, 'color_id' => 7],
+            // Vooc: Nâu, Đỏ(3), Trắng, Đen, Cam
+            ['animal_detail_id' => 22, 'color_id' => 6],
+            ['animal_detail_id' => 22, 'color_id' => 8],
+            ['animal_detail_id' => 22, 'color_id' => 5],
+            ['animal_detail_id' => 22, 'color_id' => 7],
+            // Vượn má vàng: Đen, Nâu, Vàng
+            ['animal_detail_id' => 23, 'color_id' => 8],
+            ['animal_detail_id' => 23, 'color_id' => 6],
+            ['animal_detail_id' => 23, 'color_id' => 4],
+        ]);
     }
 }
